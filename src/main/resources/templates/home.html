@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Welcome to Voting Application</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>Election Application</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            width: 1200px;
+            margin:auto;
+        }
+
+        .welcome {
+            background: #43D1AF;
+            padding: 20px 0;
+            font-size: 140%;
+            font-weight: 300;
+            text-align: center;
+            color: #fff;
+            margin: -16px -16px 16px -16px;
+        }
+
+        .button {
+            width: 300px;
+            font-size: 20px;
+            padding: 3%;
+            background: #43D1AF;
+            border-bottom: 2px solid #30C29E;
+            border-top-style: none;
+            border-right-style: none;
+            border-left-style: none;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            cursor: pointer;
+            box-shadow: 0 5px 5px #888;
+        }
+
+        .optionbox {
+            margin: 50px 0 0 200px;
+        }
+
+        #message {
+           display: block;
+            position: relative;
+            padding: .75rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            width: 600px;
+            margin-left: 25%;
+            text-align: center;
+        }
+
+        .number {
+            color: #fff;
+            height: 30px;
+            width: 30px;
+            display: inline-block;
+            font-size: 0.8em;
+            margin-right: 4px;
+            line-height: 30px;
+            text-align: center;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-radius: 15px 15px 15px 0px;
+            background-color: #222;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1 class="welcome">Main Page</h1>
+
+<div id="message" th:if="${message != null}" class="bg-success">
+    <p th:text="${message}"></p>
+</div>
+
+<div class="optionbox">
+    <a th:href="@{register-candidate}" class="button"><span class="number">1</span> Register Candidate</a>
+    <a th:href="@{create-election}" class="button"><span class="number">2</span> Create New Election</a>
+    <a th:href="@{result}" class="button"><span class="number">3</span> Summary of Election</a>
+</div>
+
+</body>
+
+</html>
